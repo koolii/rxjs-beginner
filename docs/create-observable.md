@@ -14,7 +14,7 @@ Promiseを引数にストリームを生成する
 Promise.resolve()が呼ばれるとnext、Promise.reject()が呼ばれるとerrorが呼ばれる
 => `src/sample/promise.ts`
 
-逆にストリームを配列???(Promiseではなく？)に変換する`toPromise`オペレータがある
+逆にストリームを配列???(Promiseではなく？)に変換する`toPromise`オペレータがある
 
 ### interval/一定時間ごとにデータを流すストリームを生成
 指定間隔毎にデータを流すストリームを生成
