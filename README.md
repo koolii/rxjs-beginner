@@ -18,3 +18,15 @@ RxJSの処理は大きく分けて3つの役割がある
 そこからメソッドを連結してデータの加工内容を定義する
 最終的に`subscribe`メソッドが呼び出されてデータの処理が実行される
 => `src/stream-sample.ts`
+
+### subscribeメソッド
+`subscribe(next, error, complete)`
+next: 「引数１つ、戻り値なしの関数」で、ストリームの中にデータが複数個流れる場合、そのデータの数だけ呼び出されることになる
+error: 「引数１つ、戻り値なしの関数」で、ストリーム内でエラーが発生した時のみ流れ、completeは呼び出されない
+complete: 「引数なし、戻り値なしの関数」で、全てのストリームが流れきった時に実行
+
+また、引数を順番に渡すのではなく、オブジェクトにnext,error,completeのプロパティを持たせて、subscribeに渡しても機能する
+=> `src/stream-sample2.ts`
+
+subscribeメソッドは戻り値として`Subscription`と言うクラスのインスタンを返し、
+このインスタンスはunsubscribeメソッドを持っており、データの監視をやめる際に使用する
