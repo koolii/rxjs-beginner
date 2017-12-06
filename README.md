@@ -19,14 +19,28 @@ RxJSの処理は大きく分けて3つの役割がある
 最終的に`subscribe`メソッドが呼び出されてデータの処理が実行される
 => `src/stream-sample.ts`
 
-### subscribeメソッド
+### subscribe
 `subscribe(next, error, complete)`
 next: 「引数１つ、戻り値なしの関数」で、ストリームの中にデータが複数個流れる場合、そのデータの数だけ呼び出されることになる
 error: 「引数１つ、戻り値なしの関数」で、ストリーム内でエラーが発生した時のみ流れ、completeは呼び出されない
 complete: 「引数なし、戻り値なしの関数」で、全てのストリームが流れきった時に実行
 
 また、引数を順番に渡すのではなく、オブジェクトにnext,error,completeのプロパティを持たせて、subscribeに渡しても機能する
-=> `src/stream-sample2.ts`
+=> `src/subscribe-sample.ts`
 
 subscribeメソッドは戻り値として`Subscription`と言うクラスのインスタンを返し、
 このインスタンスはunsubscribeメソッドを持っており、データの監視をやめる際に使用する
+
+### unsubscribe
+データの受取を終了するメソッド
+
+下記の条件の時は自動的に`unsubscribe`が呼び出され、`complete`が終了した時にストリームが終了する
+* `Observable.of`や`take`オペレータを適用するなどの「ストリームを流れるデータの個数が予め決まっている」場合
+* `takeUntil`オペレータの様に「終了条件が定義されている」場合
+* データが全て流れきったり、就労条件に一致した場合
+
+一定時間毎にデータを流す`Observable.interval`やイベントを`Observable`として受け取る`Observable.fromEvent`などは
+明確な終了が存在しないからずっと待ち続けてしまうため、自分で`unsubscribe`を呼び出してストリームを終了させなければならない
+
+※ただし、`unsubscribe`を実行すると`complete`が呼び出されない点には注意
+=> `src/unsubscribe-sample.ts`
