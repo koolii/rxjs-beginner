@@ -46,3 +46,4 @@ subscribeメソッドは戻り値として`Subscription`と言うクラスのイ
 => `src/sample/unsubscribe.ts`
 
 [Observableの生成](https://github.com/koolii/rxjs-beginner/blob/master/docs/create-observable.md)
+[データの加工](https://github.com/koolii/rxjs-beginner/blob/master/docs/process-data.md)
