@@ -44,3 +44,5 @@ subscribeメソッドは戻り値として`Subscription`と言うクラスのイ
 
 ※ただし、`unsubscribe`を実行すると`complete`が呼び出されない点には注意
 => `src/sample/unsubscribe.ts`
+
+[Observableの生成](https://github.com/koolii/rxjs-beginner/blob/master/docs/create-observable.md)

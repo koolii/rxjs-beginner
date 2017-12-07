@@ -10,6 +10,8 @@
   "author": "koolii",
   "license": "ISC",
   "dependencies": {
+    "@types/node-fetch": "^1.6.7",
+    "node-fetch": "^1.7.3",
     "rxjs": "^5.5.4",
     "ts-loader": "^3.2.0",
     "typescript": "^2.6.2"
