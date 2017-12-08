@@ -50,3 +50,5 @@ subscribeメソッドは戻り値として`Subscription`と言うクラスのイ
 [その他のオペレータ](https://github.com/koolii/rxjs-beginner/blob/master/docs/others-operators.md)
 [エラーハンドリング](https://github.com/koolii/rxjs-beginner/blob/master/docs/error-handle.md)
 [ストリームの切り替え](https://github.com/koolii/rxjs-beginner/blob/master/docs/switch-stream.md)
+[類似するオペレータ](https://github.com/koolii/rxjs-beginner/blob/master/docs/similar-operators.md)
+[Hot/Cold](https://github.com/koolii/rxjs-beginner/blob/master/docs/hot-cold.md)
