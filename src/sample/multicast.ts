@@ -21,6 +21,9 @@ Observable.timer(5000)
   .concatMap(_ => source$)
   .subscribe(util.templateWithPrefix('subscribe3'));
 
+// ほとんどpublish.tsと同じ内容
+// publishはmulticast(new Subject())だが、この時に引数に渡すSubjectのインスタンスで
+// publish, publishBehavior, publishReplayと派生する
 // [subscribe1]: 0
 // [subscribe1]: 1
 // [subscribe2]: 1
