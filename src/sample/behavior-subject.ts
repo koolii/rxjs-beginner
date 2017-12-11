@@ -32,3 +32,7 @@ subject.complete();
 // complete
 // complete
 // complete
+
+// subjectを生成してsubscribeを複数定義する
+// その後にnextを実行すると、subjectを生成してからnextを実行する直前までのsubscribeが発火する？
+// という理解だと上記がうまく解決できる
