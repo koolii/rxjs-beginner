@@ -28,3 +28,20 @@ publish().refCount()とshare()では、一度ストリームが終了した後�
 => `src/sample/share2.ts`
 
 ### multicast
+shareやpublishは内部的にmulticastを呼び出していて、Hotなストリームに変換する根幹をなしている
+multicastは「Subjectのインスタンス」、もしくは「Subjectのインスタンスを返すファクトリ関数」を引数にとる
+=> `src/sample/multicast.ts`
+
+* publish() === multicast(new Subject())
+* share() === multicast(() => new Subject()).refCount()
+
+また、下記のような状況において、再度subscribeされた場合の動作を規定する
+* ストリームが一度も開始されたことがない
+* ストリームが開始され、すでに終了している
+
+#### Subjectのインスタンスを引数に渡した場合
+ストリームが初めて開始される場合もすでに終了している場合も、必ず同じストリームを参照する
+(すでに終了している場合はcompleteのみが発行されることになる)
+
+#### Subjectのインスタンを返すファクトリ関数を引数に渡した場合
+すでにストリームが終了している場合は、新たなストリームが生成、再度実行
