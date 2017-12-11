@@ -53,3 +53,4 @@ subscribeメソッドは戻り値として`Subscription`と言うクラスのイ
 [類似するオペレータ](https://github.com/koolii/rxjs-beginner/blob/master/docs/similar-operators.md)
 [Hot/Cold](https://github.com/koolii/rxjs-beginner/blob/master/docs/hot-cold.md)
 [Hot<=>Coldの切り替え](https://github.com/koolii/rxjs-beginner/blob/master/docs/convert-cold-hot.md)
+[Subject](https://github.com/koolii/rxjs-beginner/blob/master/docs/subject.md)
