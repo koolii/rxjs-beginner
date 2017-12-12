@@ -15,7 +15,7 @@ class Util {
 
   templateWithPrefix(prefix: string) {
     return {
-      next: (x: any) => this.print(`[${prefix}]`, x),
+      next: (...x: any[]) => this.print(`[${prefix}]`, x),
       error: this.template.error,
       complete: this.template.complete
     }
