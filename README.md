@@ -1,4 +1,4 @@
-### Observerパターン
+## Observerパターン
 参照されるデータ（観測対象／Subject）と「データを参照するオブジェクト（観測者／Observer）」について
 「参照されるデータ（観測対象）がデータを参照するオブジェクト（観測者）を管理して必要な処理を行う」の **ではなく**
 「参照されるデータ（観測対象）はデータの変更を通知するのみで、変更の通知を受けたデータを参照するオブジェクト（観測者）がそれぞれ必要な処理をする」
@@ -45,12 +45,22 @@ subscribeメソッドは戻り値として`Subscription`と言うクラスのイ
 ※ただし、`unsubscribe`を実行すると`complete`が呼び出されない点には注意
 => `src/sample/unsubscribe.ts`
 
+## 各章
+
 [Observableの生成](https://github.com/koolii/rxjs-beginner/blob/master/docs/create-observable.md)
+
 [データの加工](https://github.com/koolii/rxjs-beginner/blob/master/docs/process-data.md)
+
 [その他のオペレータ](https://github.com/koolii/rxjs-beginner/blob/master/docs/others-operators.md)
+
 [エラーハンドリング](https://github.com/koolii/rxjs-beginner/blob/master/docs/error-handle.md)
+
 [ストリームの切り替え](https://github.com/koolii/rxjs-beginner/blob/master/docs/switch-stream.md)
+
 [類似するオペレータ](https://github.com/koolii/rxjs-beginner/blob/master/docs/similar-operators.md)
+
 [Hot/Cold](https://github.com/koolii/rxjs-beginner/blob/master/docs/hot-cold.md)
+
 [Hot<=>Coldの切り替え](https://github.com/koolii/rxjs-beginner/blob/master/docs/convert-cold-hot.md)
+
 [Subject](https://github.com/koolii/rxjs-beginner/blob/master/docs/subject.md)
